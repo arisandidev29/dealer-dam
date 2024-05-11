@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body {
+	@apply font-content;
+}
+
+@layer components {
+	.btn {
+		@apply bg-gradient-to-r from-red-700 to-yellow-500  bg-accent px-6 py-[.4rem] rounded-lg border-solid border-[0.1rem] border-slate-400 font-title
+	}
+
+
+}
