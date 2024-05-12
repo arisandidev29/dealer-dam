@@ -9,6 +9,14 @@
 @layer components {
 	.btn {
 		@apply bg-gradient-to-r from-red-700 to-yellow-500  bg-accent px-6 py-[.4rem] rounded-lg border-solid border-[0.1rem] border-slate-400 font-title
+	} 
+
+	.subtitle {
+		@apply text-lg md:text-4xl text-primary font-semibold 
+	}
+
+	.underline-text {
+		@apply  after:h-1 after:bg-accent after:-bottom-1 after:w-[30%]   after:left-1/2 after:translate-x-[-50%]  after:absolute hover:after:w-full after:transition-all;
 	}
 
 

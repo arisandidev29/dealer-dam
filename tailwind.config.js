@@ -15,6 +15,9 @@ export default {
       fontFamily : {
         title : [" Poppins" , "sans-serif"],
         content : ["Roboto " , "sans-serif"]
+      },
+      gridTemplateRows : {
+        "mobile-hero" : "max-content 1fr"
       }
     },
   },
