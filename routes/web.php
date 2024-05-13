@@ -5,9 +5,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->name("home");
+
+
+// product
+
+Route::get("/product", function() {
+    return view("product.index");
 });
-
-
 
 // auth
 

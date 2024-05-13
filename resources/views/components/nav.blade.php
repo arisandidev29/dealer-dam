@@ -12,7 +12,7 @@
             </form>
         </li>
         <li>
-            <a href="">
+            <a href="{{ route('login') }}">
                 <button class="btn">Login</button>
             </a>
         </li>

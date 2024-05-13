@@ -10,14 +10,17 @@ export default {
       colors : {
         primary : "#C00000",
         "primary-light" : "#DE3C3C",
-        accent : "#F7B32D"
+        accent : "#F7B32D",
       },
       fontFamily : {
         title : [" Poppins" , "sans-serif"],
         content : ["Roboto " , "sans-serif"]
       },
+      gridTemplateColumns : {
+        "card" : "repeat(auto-fit, minmax(100px,1fr))"
+      },
       gridTemplateRows : {
-        "mobile-hero" : "max-content 1fr"
+        "mobile-hero" : "max-content 1fr",
       }
     },
   },
