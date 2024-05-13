@@ -10,10 +10,18 @@ Route::get('/', function () {
 
 // product
 
+
 Route::get("/product", function() {
     return view("product.index");
+})->name("product");
+
+Route::get("/product/view/{id}", function() {
+    return view("product.product");
 });
 
+Route::get("/product/tambah", function() {
+    return view("product.tambah");
+})->name("product.tambah");
 // auth
 
 Route::controller(AuthController::class)->group(function() {

@@ -4,7 +4,7 @@
     </div>
     <ul class="hidden md:flex gap-4 items-center ">
         <li class="font-title text-accent font-semibold relative underline-text">
-            <a href="">Product</a>
+            <a href="{{ route('product') }}">Product</a>
         </li>
         <li>
             <form action="">

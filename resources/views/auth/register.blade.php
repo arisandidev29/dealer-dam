@@ -1,5 +1,5 @@
 <x-app-layout>
-	<div class="p-4 bg-gradient-to-br from-primary to-white grid">
+	<div class="p-4 bg-gradient-to-br from-primary to-white min-h-screen">
 		<div class="w-24">
 			<a href="{{ route('home') }}">
 			<img  src="{{ asset("storage/logo.png") }}" alt="logo" >

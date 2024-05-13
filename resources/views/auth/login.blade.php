@@ -1,11 +1,11 @@
 <x-app-layout>
-<div class="p-4 bg-gradient-to-br from-primary to-white grid">
+<div class="p-4 bg-gradient-to-br from-primary to-white min-h-screen ">
 	<div class="w-24">
 		<a href="{{ route('home') }}">
 		<img  src="{{ asset("storage/logo.png") }}" alt="logo" >
 		</a>
 	</div>
-	<div class=" place-items-center content-center  mt-4">
+	<div class=" content-center  mt-4 flex  justify-center items-center">
 		<x-form >
 		<h1 class="text-white text-center text-lg md:text-2xl font-title">Login To Your Account</h1>
 

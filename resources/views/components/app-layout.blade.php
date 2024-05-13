@@ -15,7 +15,7 @@
             rel="stylesheet"
         />
     </head>
-    <body>
+    <body class="relative bg-white">
         {{ $slot }}
     </body>
 </html>

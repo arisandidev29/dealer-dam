@@ -1,7 +1,7 @@
 <div class="  md:hidden bg-black fixed w-0 overflow-hidden px-4 py-6   top-[5.1rem] -right-8 z-50 transition-all" id="menu-mobile">
    <ul class="flex flex-col items-start gap-4 ">
         <li class="font-title text-white font-semibold relative ">
-            <a href="">Product</a>
+            <a href="{{ route('product') }}">Product</a>
         </li>
         <li>
             <form action="">
