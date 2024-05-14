@@ -1,7 +1,5 @@
 <nav class="bg-primary w-full fixed top-0 left-0  flex justify-between items-center px-4 py-4 z-50 border-b-2 border-slate-800 border-solid" >
-    <div class="w-24">
-    <img  src="{{ asset("storage/logo.png") }}" alt="logo" >
-    </div>
+   <x-logo />
     <ul class="hidden md:flex gap-4 items-center ">
         <li class="font-title text-accent font-semibold relative underline-text">
             <a href="{{ route('product') }}">Product</a>
@@ -10,6 +8,15 @@
             <form action="">
                 <input type="search" placeholder="Cari Product ..." class="w-64 bg-accent text-black text-sm rounded-md px-1 py-2 placeholder:text-slate-700 after:content-['fdfdf'] after:w-8 after:h-8 after:inline-block ">
             </form>
+        </li>
+        <li  class="flex gap-2 items-center ">
+            <div class="w-12 h-12 bg-accent rounded-full "></div>
+            <div class="flex flex-col ">
+                <p class="text-white text-xs font-semibold">Nama User</p>
+                <p class="text-white text-xs">Admin</p>
+                
+            </div>
+
         </li>
         <li>
             <a href="{{ route('login') }}">

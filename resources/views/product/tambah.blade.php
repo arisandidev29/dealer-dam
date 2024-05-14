@@ -41,7 +41,7 @@
 			</div>
 
 			<div class="flex gap-4 justify-center my-4 items-center ">
-				<a href="{{ route('home') }}" >
+				<a href="{{ route('product') }}" >
 					<button type="button" class="btn-sm md:btn bg-accent" >Cancel</button>
 				</a>
 				<button class=" btn-sm md:btn  block">Add Product</button>
@@ -55,7 +55,6 @@
 
 	inputGambar.addEventListener("change",(e) => {
 		const file = inputGambar.files;
-		console.log("ok");
 
 		if(file) {
 			const fileReader = new FileReader();
@@ -64,6 +63,7 @@
 			fileReader.onload = (event) => {
 				img.setAttribute("src",event.target.result);		
 				img.style.width = "50%";
+
 			}
 
 			fileReader.readAsDataURL(file[0]);
@@ -71,7 +71,6 @@
 			previewGambar.appendChild(img);
 			previewGambar.removeChild(previewGambar.firstChild);
 
-			console.log(previewGambar);
 		}
 	})
 </script>

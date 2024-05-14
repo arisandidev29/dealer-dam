@@ -15,6 +15,15 @@
 					<x-input type="email" label="Email" name="email" />
 					<x-input type="password" label="password" name="password" />
 					<x-input type="password" label="password confirmasi" name="password_confirm" />
+
+					<label for="gambar">
+						<input type="file" hidden id="gambar" name="profile_pic">
+						<p class="text-white text-sm">Profile Picture</p>
+						<div class="bg-primary-light w-full min-h-40 p-8 rounded-xl grid place-items-center text-white text-xs cursor-pointer" id="preview-gambar">
+							click to upload image 	
+						</div>	
+			</label>
+					</label>
 				</div>
 				<button class="btn mx-auto block mt-4">Register</button>
 
@@ -23,4 +32,29 @@
 			</x-form>
 		</div>
 	</div>
+	<script>
+	const inputGambar = document.querySelector("#gambar");
+	const previewGambar = document.querySelector("#preview-gambar");
+
+	inputGambar.addEventListener("change",(e) => {
+		const file = inputGambar.files;
+
+		if(file) {
+			const fileReader = new FileReader();
+			const img = document.createElement("img");
+
+			fileReader.onload = (event) => {
+				img.setAttribute("src",event.target.result);		
+				img.style.width = "50%";
+				img.style.borderRadius = "50%";
+			}
+
+			fileReader.readAsDataURL(file[0]);
+
+			previewGambar.appendChild(img);
+			previewGambar.removeChild(previewGambar.firstChild);
+
+		}
+	})
+</script>
 </x-app-layout>

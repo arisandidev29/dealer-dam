@@ -5,9 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{{ $title ?? "Dealer DAM Tidore" }}</title>
 
-        {{-- tailwindcss --}} 
-        @vite('resources/css/app.css')
-         {{-- fonts --}}
+        {{-- tailwindcss --}} @vite('resources/css/app.css') {{-- fonts --}}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -15,7 +13,7 @@
             rel="stylesheet"
         />
     </head>
-    <body class="relative bg-white">
+    <body class="relative flex flex-col min-h-screen bg-white">
         {{ $slot }}
     </body>
 </html>

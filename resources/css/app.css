@@ -7,6 +7,9 @@
 }
 
 @layer components {
+	.btn-raw {
+		@apply  px-2 md:px-6 py-[.4rem] rounded-lg border-solid border-[0.1rem] border-slate-400 font-title	
+	}
 	.btn {
 		@apply bg-gradient-to-r from-red-700 to-yellow-500  bg-accent px-2 md:px-6 py-[.4rem] rounded-lg border-solid border-[0.1rem] border-slate-400 font-title
 	} 
