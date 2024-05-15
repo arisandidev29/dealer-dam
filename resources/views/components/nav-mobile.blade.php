@@ -16,21 +16,31 @@
             </form>
         </li>
 
+
+        @if (Auth::check())
         <li class="flex gap-2 items-center">
             <img
-                src="#"
+                src="{{ asset(auth()->user()->img) }}"
                 alt="photo profile"
                 class="w-12 h-12 bg-accent rounded-full"
             />
             <div class="text-accent">
-                <p>User</p>
-                <p class="text-xs">Admin</p>
+                <p>{{ auth()->user()->name }}</p>
+                <p class="text-xs">{{ auth()->user()->role }}</p>
             </div>
         </li>
+
+        @endif
         <li>
+            @if (Auth::check())
+                <a href="{{ route('logout') }}">
+                    <button class="btn">Logout</button>
+                </a>
+            @else
             <a href="{{ route('login') }}">
                 <button class="btn">Login</button>
             </a>
+            @endif
         </li>
     </ul>
 </div>

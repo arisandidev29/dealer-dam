@@ -9,19 +9,30 @@
                 <input type="search" placeholder="Cari Product ..." class="w-64 bg-accent text-black text-sm rounded-md px-1 py-2 placeholder:text-slate-700 after:content-['fdfdf'] after:w-8 after:h-8 after:inline-block ">
             </form>
         </li>
-        <li  class="flex gap-2 items-center ">
-            <div class="w-12 h-12 bg-accent rounded-full "></div>
-            <div class="flex flex-col ">
-                <p class="text-white text-xs font-semibold">Nama User</p>
-                <p class="text-white text-xs">Admin</p>
-                
-            </div>
+        @if (Auth::check())
+            <li  class="flex gap-2 items-center ">
+                <img src="{{ asset(auth()->user()->img) }}" alt="user picture" class="w-12 h-12 grid text-xs text-center place-items-center bg-accent rounded-full " />
+                <div class="flex flex-col ">
+                    <p class="text-white text-xs font-semibold">{{ auth()->user()->name }}</p>
+                    <p class="text-white text-xs">{{auth()->user()->role }}</p>
+                    
+                </div>
 
-        </li>
+            </li>
+        @endif
+
+
         <li>
+            @if (Auth::check())
+                <a href="{{ route('logout') }}">
+                    <button class="btn">Logout</button>
+                </a>
+            @else
             <a href="{{ route('login') }}">
                 <button class="btn">Login</button>
             </a>
+            @endif
+           
         </li>
     </ul>
     <div class="block md:hidden cursor-pointer ">

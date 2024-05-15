@@ -1,7 +1,14 @@
 <x-app-layout>
 	<div class="p-4 bg-gradient-to-br from-primary to-white min-h-screen">
 		<x-logo />
-			<x-form>
+			@error("errors")
+				<div class="max-w-[500px] my-4 text-center bg-accent rounded-xl mx-auto px-4 py-6 ">
+					{{ $message }}
+				</div>
+			@enderror
+
+			<x-form action="{{ route('doLogin') }}" method="post">
+				@csrf
 				<h1
 					class="text-white text-center text-lg md:text-2xl font-title"
 				>
@@ -9,11 +16,12 @@
 				</h1>
 
 				<div class="flex flex-col gap-2 md:gap-8 py-4">
-					<x-input type="text" label="Nama" name="user" />
+					<x-input type="text" label="Nama" name="name" />
+
 					<x-input type="password" label="Password" name="password" />
 					<div class="flex justify-between items-center">
 						<div>
-							<input type="checkbox" />
+							<input type="checkbox" name="remember" 	/>
 							<small class="text-white">Remember me</small>
 						</div>
 						<a href="" class="underline italic text-xs text-white"
