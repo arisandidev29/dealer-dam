@@ -56,7 +56,6 @@ class AuthController extends Controller
     public function doRegister(Request $request)
     {
 
-        dd($request->file("profile_pic")->store("user"));
         $validate = $request->validate([
             "name" => ["required"],
             "email" => ["required","email:rfc",'unique:App\Models\User,email'],

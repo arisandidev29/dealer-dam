@@ -16,6 +16,8 @@
 				<button class="btn-sm">management product</button>
 				</div>
 			</div>
+
+		@can("viewManagementUser")	
 		<div class="flex gap-4 border-4 border-solid border-primary px-6 py-8 rounded-xl">
 				<div class="self-center ">
 					<img src="{{ asset('storage/user big.png') }}" alt="product "  class="w-[50%] mx-auto ">
@@ -29,5 +31,6 @@
 			</div>
 
 		</div>
+		@endcan
 	</div>
 </x-app-layout>
