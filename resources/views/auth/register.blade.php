@@ -8,6 +8,7 @@
 
 		<div class=" mt-4 place-items-center content-center  ">
 			<x-form action="{{ route('doRegister') }}" method="post" enctype="multipart/form-data">
+	
 				@csrf
 				<h1 class="text-white text-center text-lg  md:text-2xl font-title">Register Your Account</h1>
 

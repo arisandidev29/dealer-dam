@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,18 +12,22 @@ Route::get('/', function () {
 
 // product
 
-
-Route::get("/product", function() {
-    return view("product.index");
-})->name("product");
-
-Route::get("/product/view/{id}", function() {
-    return view("product.product");
+Route::controller(ProductController::class)->group(function() {
+    Route::get("/product",'index')->name("product");
+    Route::get("/product/view/{id}",'show')->name("product.view");
+    Route::get("/product/edit/{id}",'edit')->name("product.edit");
+    Route::post("/product/edit/{id}",'update')->name("product.update");
+    Route::get("/product/tambah","create")
+                ->name("product.tambah")
+                ->middleware(['auth',"can:managementProduct"]);
+    Route::post("/product/tambah",'store')
+                ->name("product.store")
+                ->middleware(['auth',"can:managementProduct"]);
+    Route::get("/product/delete/{id}",'destroy')->name("product.destroy");
 });
 
-Route::get("/product/tambah", function() {
-    return view("product.tambah");
-})->name("product.tambah");
+
+
 
 // dashboard
 

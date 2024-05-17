@@ -4,6 +4,7 @@
     <section id="hero" style="background-image: url('{{ asset("storage/bg.svg") }}');" class="bg-cover bg-center min-h-screen md:min-h-[110vh] pt-14 md:pt-20 grid grid-cols-1 md:grid-cols-2 grid-rows-mobile-hero grid-flow-dense gap-0">
         <div class="md:pt-10 px-10 text-center md:text-left order-last md:order-first ">
 
+
             <h1 class="font-title text-4xl md:text-8xl text-white font-semibold">Daya Motor</h1>
 
             <h2 class="font-title text-2xl md:text-6xl text-accent">Dealer</h2>
@@ -25,6 +26,7 @@
            Daya Motor (DAM) adalah dealer motor honda yang didirikan pada tahun 2018, yang merupakan dealer motor honda cabang Tidore yang berpusat di Ternante, Dealer motor DAM berlokasi di <strong>Jl. Kemakmuran, Indonesianan, Kota Tidore Kepulauan, Maluku Utara</strong>, bertujuan Untuk memberikan akases motor idaman untuk masyarakat <strong>Tidore</strong> 
        </p>
     </section>
+
 
     <section id="visimisi" class=" px-4 md:px-10 my-20 -z-10">
        <div class="bg-primary rounded-2xl px-10 py-12 md:grid grid-cols-2 relative ">

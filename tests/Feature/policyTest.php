@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Number;
 use Tests\TestCase;
 
 class policyTest extends TestCase
@@ -18,5 +19,11 @@ class policyTest extends TestCase
      Auth::login($user);
 
      $this->assertTrue(Gate::allows("viewDashboard",$user));
+   }
+
+   public function testCurrency()
+   {
+    echo number_format(100000);
+    echo Number::format(100000);
    }
 }
