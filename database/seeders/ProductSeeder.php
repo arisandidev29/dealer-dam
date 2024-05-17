@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
     {
         // Product::factory()->count(3)->make();
 
-        for ($i=0; $i < 15; $i++) { 
+        for ($i=0; $i < 20; $i++) { 
         Product::create([
              "name" => fake()->name(),
             "tahun" => "2029",

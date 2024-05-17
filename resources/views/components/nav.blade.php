@@ -5,8 +5,8 @@
             <a href="{{ route('product') }}">Product</a>
         </li>
         <li>
-            <form action="">
-                <input type="search" placeholder="Cari Product ..." class="w-64 bg-accent text-black text-sm rounded-md px-1 py-2 placeholder:text-slate-700 after:content-['fdfdf'] after:w-8 after:h-8 after:inline-block ">
+            <form action="{{ route('product.search') }}">
+                <input type="search" name="keyword" placeholder="Cari Product ..." class="w-64 bg-accent text-black text-sm rounded-md px-1 py-2 placeholder:text-slate-700 after:content-['fdfdf'] after:w-8 after:h-8 after:inline-block ">
             </form>
         </li>
         @if (Auth::check())

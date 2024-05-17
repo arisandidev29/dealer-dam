@@ -24,6 +24,7 @@ Route::controller(ProductController::class)->group(function() {
                 ->name("product.store")
                 ->middleware(['auth',"can:managementProduct"]);
     Route::get("/product/delete/{id}",'destroy')->name("product.destroy");
+    Route::get("/product/search",'search')->name("product.search");
 });
 
 

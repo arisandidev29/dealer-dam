@@ -138,4 +138,18 @@ class ProductController extends Controller
 
         return redirect(route("product"));
     }
+
+    // search product
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input("keyword");
+
+        $searchProduct = Product::where("name","like","%$keyword%")->get();
+        return view("product.search",[
+            'title' => "Search $keyword",
+            "keyword" => $keyword,
+            'products' => $searchProduct
+        ]);        
+    }
 }
