@@ -2,7 +2,7 @@
 	<x-nav />
 	<x-admin-menu/>
 	<div class="mt-32 px-10 w-full md:w-[80%] mx-auto">
-		<h1 class="text-2xl  md:text-5xl font-semibold">Welcome Admin</h1>
+		<h1 class="text-2xl  md:text-5xl font-semibold">Welcome {{ auth()->user()->name }}</h1>
 
 		<div class="grid grid-cols-1  md:grid-cols-2 gap-4 mt-6">
 			<div class="flex gap-4 border-4 border-solid border-accent px-6 py-8 rounded-xl">

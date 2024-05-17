@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\File;
 use Illuminate\Validation\Rules\Password;
@@ -25,13 +26,23 @@ class AuthController extends Controller
     {
 
         $validated = $request->validate([
-            "name" => ["required"],
+            "name" => ["required",'string'],
             "password" => ["required"]
         ]);
 
         $remember = $request->input("request");
 
-       if(Auth::attempt($validated,$remember)) {
+        $login = $validated['name'];
+
+       if(
+        Auth::attempt([
+            'name' => $login,
+            'password' => $request->input("password")
+        ],$remember) || Auth::attempt([
+            "email" => $login,
+            "password" => $request->input("password")
+        ])
+       ) {
             $request->session()->regenerate();
 
             return redirect(route("admin.dashboard"));
@@ -75,7 +86,9 @@ class AuthController extends Controller
        $user->save();
 
 
-       echo "registrasi success";
+       Session::flash("success","Registrasi Berhasil");
+
+       return redirect(route("login"));
 
 
 

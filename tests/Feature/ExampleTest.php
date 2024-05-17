@@ -3,17 +3,37 @@
 namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
+
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
-    /**
-     * A basic test example.
-     */
-    public function test_the_application_returns_a_successful_response(): void
+    public function testHast()
     {
-        $response = $this->get('/');
+       $hash = '$2y$12$f5d/qFQmbP9yRYrFZHXTauYvhTrwo5co696deOlUoIY51i0ed5ZzG';
+        $password = "nandi29@";
 
-        $response->assertStatus(200);
+        $this->assertTrue(Hash::check($password,$hash));
     }
+
+    public function testLogin()
+    {
+        $user = User::where("name","arisandi kader")->first();
+
+        dd($user);
+
+        Auth::attempt([
+            "name" => $user->name,
+            "password" => $user->password
+        ]
+        );
+
+
+        $this->assertTrue(Auth::check());
+    }
+
+
 }

@@ -1,7 +1,7 @@
 <x-app-layout>
 <x-nav />
 <main >
-    <section id="hero" style="background-image: url('{{ asset("storage/bg.svg") }}');" class="bg-cover bg-center min-h-screen md:min-h-[110vh] pt-14 md:pt-20 grid grid-cols-1 md:grid-cols-2 grid-rows-mobile-hero grid-flow-dense gap-0">
+    <section id="hero" style="background-image: url('{{ asset("storage/bg.svg") }}');" class="bg-cover bg-center min-h-screen md:min-h-[110vh] pt-20 grid grid-cols-1 md:grid-cols-2 grid-rows-mobile-hero grid-flow-dense gap-0">
         <div class="md:pt-10 px-10 text-center md:text-left order-last md:order-first ">
 
 

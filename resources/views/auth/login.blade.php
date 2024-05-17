@@ -1,5 +1,5 @@
 <x-app-layout>
-	<div class="p-4 bg-gradient-to-br from-primary to-white min-h-screen">
+	<div class="p-4 grid bg-gradient-to-br from-primary to-white min-h-screen">
 		<x-logo />
 			@error("errors")
 				<div class="max-w-[500px] my-4 text-center bg-accent rounded-xl mx-auto px-4 py-6 ">
@@ -7,6 +7,9 @@
 				</div>
 			@enderror
 
+			@if (Session::has("success"))
+				<p class="text-black bg-accent w-[500px] mx-auto rounded-xl my-4 px-4 py-4 text-center ">{{ Session::get("success") }}</p>
+			@endif
 			<x-form action="{{ route('doLogin') }}" method="post">
 				@csrf
 				<h1
@@ -16,7 +19,7 @@
 				</h1>
 
 				<div class="flex flex-col gap-2 md:gap-8 py-4">
-					<x-input type="text" label="Nama" name="name" />
+					<x-input type="text" label="Username/Email" name="name" />
 
 					<x-input type="password" label="Password" name="password" />
 					<div class="flex justify-between items-center">
@@ -38,5 +41,6 @@
 					>
 				</p>
 			</x-form>
+				
 	</div>
 </x-app-layout>
