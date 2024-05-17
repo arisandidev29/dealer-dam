@@ -3,7 +3,8 @@
 <x-admin-menu />
 <div class="px-4 md:px-8 mt-36 mb-8">
 	<div class="flex flex-col md:flex-row justify-between mb-4 items-start  md:items-center">
-		<h1 class="text-lg md:text-4xl text-primary my-4">Temukan Motor Impian Mu !</h1>
+		<h1 class="text-lg md:text-4xl text-primary my-4 ">Category motor : {{ $category }}</h1>
+
 
 		@can("managementProduct")
 		<a href="{{ route('product.tambah') }}">
@@ -12,15 +13,11 @@
 		@endcan
 	</div>
 
-	<div class="flex gap-4 mb-2">
-		<a href="/product/category?category=sport"><button class="btn-raw text-accent border-2 border-solid border-accent hover:bg-accent hover:text-black transition-all duration-300 " >Sport</button></a>
-		<a href="/product/category?category=matic"><button class="btn-raw text-primary border-2 border-solid border-primary hover:bg-primary hover:text-black transition-all duration-300 ">Matic</button></a>
-		<a href="/product/category?category=cub"><button class="btn-raw text-primary-light border-2 border-solid border-primary-light hover:bg-primary-light hover:text-black transition-all duration-300 ">Cub</button></a>
-	</div>
+		<hr class=" bg-slate-600  w-full" />
 
 		
 	<div class="grid grid-cols-2 md:grid-cols-4  gap-2 md:gap-4" >
-		@foreach($products as $product)
+		@forelse($products as $product)
 		<div class=" bg-rose-100 rounded-lg px-2 md:px-4 py-2 grid grid-cols-1 md:grid-cols-2  " >
 			<div class="w-[90%] md:w-[80%] mx-auto self-center">
 				<img src="{{ asset($product->image) }}" alt="img">
@@ -60,7 +57,10 @@
 					
 				</div>
 		</div>
-		@endforeach
+		@empty
+
+		<h2 class="text-base md:text-2xl text-primary my-4">Tidak di Temukan untuk category {{ $category }}</h2>
+		@endforelse
 	
 	
 		

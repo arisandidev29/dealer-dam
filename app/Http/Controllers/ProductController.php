@@ -152,4 +152,24 @@ class ProductController extends Controller
             'products' => $searchProduct
         ]);        
     }
+
+    // filter per category
+
+    public function category(Request $request)
+    {
+        $category = $request->input("category");
+
+        if($product = Product::where("type",$category)->get()) {
+             return view("product.category",[
+                'title' => "category $category",
+                'products' => $product,
+                'category' => $category 
+             ]);
+
+        }
+
+        return abort(404);
+
+
+    }
 }
