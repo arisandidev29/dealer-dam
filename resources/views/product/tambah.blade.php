@@ -6,9 +6,16 @@
 		</a>
 		</div>
 
+		
+
 		<x-form method="post" action="{{ route('product.store') }}" enctype="multipart/form-data">
 
 			@csrf
+
+			@if(Session::has("success"))
+				<p class="bg-accent text-black px-4 py-4 rounded-xl my-4">{{ Session::get("success") }}</p>
+			@endif
+			
 			<h1 class="text-white text-center text-lg md:text-2xl font-title mb-4">Add New Product</h1>
 
 			<div class="flex flex-col gap-4 md:gap-6">

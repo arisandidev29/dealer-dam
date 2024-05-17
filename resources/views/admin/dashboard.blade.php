@@ -11,9 +11,12 @@
 					
 				</div>
 				<div class="flex flex-col gap-2">
-				<p class="text-5xl text-accent">24</p>
-				<p class="text-accent">Product</p>
-				<button class="btn-sm">management product</button>
+				<p class="text-5xl text-accent">{{ $products }}</p>
+				<p class="text-accent">Total Product</p>
+				k
+				<a href="{{ route('product') }}">
+					<button class="btn-sm">management product</button>
+				</a>
 				</div>
 			</div>
 
@@ -24,9 +27,12 @@
 					
 				</div>
 				<div class="flex flex-col gap-2 flex-1">
-				<p class="text-5xl text-primary">24</p>
-				<p class="text-primary">Users</p>
-				<button class="btn-sm">management product</button>
+				<p class="text-5xl text-primary">{{ $users }}</p>
+				<p class="text-primary">Total Users</p>
+
+				<a href="{{ route('admin.users') }}">
+					<button class="btn-sm">management User</button>
+				</a>
 				</div>
 			</div>
 

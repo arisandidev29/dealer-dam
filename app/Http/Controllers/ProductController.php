@@ -57,7 +57,10 @@ class ProductController extends Controller
         $currentProduct->image = $request->file("product_pic")->store("motor");
         $currentProduct->save();
 
-        return redirect(route("product"));
+        Session::flash("success",'Berhasil Update Product');
+
+
+        return back();
 
 
 

@@ -36,12 +36,21 @@ Route::controller(AdminController::class)
             ->group(function() {
                     Route::get("/dashboard",'dashboard')
                                 ->name("admin.dashboard");
+                    Route::get("/users",'users')
+                                 ->name('admin.users')
+                                 ->middleware('can:viewManagementUser');
+                    Route::get("/users/view/{id}",'viewUser')
+                                 ->name("admin.user");
+                    Route::get("/user/delete/{id}","deleteUser")
+                                 ->name("admin.deleteUser");
+
+                    // update only role
+                    Route::post("/user/edit/role/{id}","updateUserRole")
+                                 ->name("admin.updateRole")
+                                 ->middleware('can:viewManagementUser');
             });
 
 
-Route::get("/users", function () {
-    return view("admin.users");
-});
 // auth
 
 Route::controller(AuthController::class)->group(function() {
