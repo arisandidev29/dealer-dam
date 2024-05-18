@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout :title="$title">
 <x-nav />
 <x-admin-menu />
 <div class="px-4 md:px-8 mt-36 mb-8">
@@ -61,10 +61,14 @@
 				</div>
 		</div>
 		@endforeach
+
 	
 	
-		
 	</div>
+		
+		<div class="my-4">
+			{{ $products->links() }}
+		</div>
 </div>
 <x-footer />
 </x-app-layout>

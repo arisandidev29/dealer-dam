@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout :title="$title">
 	<x-nav />
 	<x-admin-menu/>
 	<div class="mt-32 px-10 w-full md:w-[80%] mx-auto">
@@ -13,7 +13,7 @@
 				<div class="flex flex-col gap-2">
 				<p class="text-5xl text-accent">{{ $products }}</p>
 				<p class="text-accent">Total Product</p>
-				k
+				
 				<a href="{{ route('product') }}">
 					<button class="btn-sm">management product</button>
 				</a>

@@ -31,4 +31,23 @@
 	}
 
 
+/*	pagination*/
+	
+	.previous-link {
+		@apply relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-accent rounded-l-md ;
+	}
+
+	.next-link{
+		@apply relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-accent rounded-r-md ;
+	}
+
+
+	.other-link {
+		@apply relative  items-center w-10 h-10 grid place-items-center -ml-px text-sm font-medium text-black  border border-accent leading-5 rounded-full;
+	}
+
+	.current-link {
+		@apply relative  items-center w-10 h-10 grid place-items-center -ml-px text-sm font-medium text-black   bg-gradient-to-r from-primary to-accent rounded-full;
+	}
+
 }

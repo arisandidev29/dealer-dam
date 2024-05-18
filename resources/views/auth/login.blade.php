@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout :title="$title">
 	<div class="p-4 grid bg-gradient-to-br from-primary to-white min-h-screen">
 		<x-logo />
 			@error("errors")

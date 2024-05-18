@@ -19,6 +19,7 @@ class AdminController extends Controller
         $product =  Product::all()->count();
         $user = User::all()->count();
             return view("admin.dashboard",[
+                "title" => "dashboard",
                 "users" => $user,
                 "products" => $product
             ]);

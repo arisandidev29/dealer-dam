@@ -3,7 +3,12 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{ $title ?? "Dealer DAM Tidore" }}</title>
+
+        @if (isset($title))
+            <title>{{ $title . " | Dealer Dam tidore" }}</title>
+        @else
+            <title>Dealer Dam Tidore</title>
+        @endif
 
         {{-- tailwindcss --}} @vite('resources/css/app.css') {{-- fonts --}}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -63,7 +63,7 @@
 			</div>
 
 			<div class="flex gap-4 justify-center my-4 items-center ">
-				<a href="{{ URL::previous() }}" >
+				<a href="{{ route("product")}}" >
 					<button type="button" class="btn-sm md:btn bg-accent" >Cancel</button>
 				</a>
 				<button class=" btn-sm md:btn  block">Edit Product</button>

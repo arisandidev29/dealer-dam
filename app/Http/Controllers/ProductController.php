@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::all();
+        $product = Product::paginate(15);
         return view("product.index",[
             "title" => "product Dealer Dam",
             "products" => $product
@@ -28,7 +28,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view("product.tambah");
+        return view("product.tambah",[
+            "title" => "Tambah Product"
+        ]);
     }
 
     /**
@@ -57,7 +59,7 @@ class ProductController extends Controller
         $currentProduct->image = $request->file("product_pic")->store("motor");
         $currentProduct->save();
 
-        Session::flash("success",'Berhasil Update Product');
+        Session::flash("success",'Berhasil Tambah Product');
 
 
         return back();
