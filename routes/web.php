@@ -55,10 +55,10 @@ Route::controller(AdminController::class)
 // auth
 
 Route::controller(AuthController::class)->group(function() {
-    Route::get("/login","login")->name("login");
-    Route::post("/login","doLogin")->name("doLogin");
-    Route::get("/register",'register')->name("register");
-    Route::post("/register",'doRegister')->name("doRegister");
+    Route::get("/login","login")->name("login")->middleware("guest");
+    Route::post("/login","doLogin")->name("doLogin")->middleware("guest");
+    Route::get("/register",'register')->name("register")->middleware("guest");
+    Route::post("/register",'doRegister')->name("doRegister")->middleware("guest");
     Route::get("/logout",'logout')->name("logout");
 });
 
