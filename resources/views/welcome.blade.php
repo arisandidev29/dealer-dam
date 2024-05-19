@@ -81,7 +81,7 @@
 
     <section id="contact" class="my-8 px-5 mt-10">
         <h2 class="subtitle text-center my-4">Contact Us</h2>
-        <x-form>
+        {{-- <x-form>
             <div class="flex flex-col gap-4  md:gap-6">
             <x-input type="text" label="Nama" name="nama" />
             <x-input type="email" label="Email" name="email" />
@@ -93,7 +93,7 @@
             </div>
 
             <button class="btn mt-6">Kirim</button>
-        </x-form>
+        </x-form> --}}
 
         <h3 class="subtitle text-center italic font-normal  my-4 md:text-base">Social media</h3>
         <ul class=" flex gap-4 justify-center">
